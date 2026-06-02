@@ -2,7 +2,6 @@ import streamlit as st
 import google.generativeai as genai
 
 # --- ЖИ КІЛТІН БАПТАУ ---
-# НАЗАР АУДАРЫҢЫЗ: ОСЫ_ЖЕРГЕ ai.google.dev сайтынан алған өз кілтіңізді қойыңыз
 GEMINI_API_KEY = "AQAb8RN63yxVeVwr2HDFY_Jh2T-hBcTmf4CNgdxvQHEZNQwLqj3w"
 genai.configure(api_key=GEMINI_API_KEY)
 
@@ -56,7 +55,7 @@ elif st.session_state.step == 4:
     st.subheader("🎯 ЖИ Сараптамасының Қорытындысы")
     
     user_profile = f"Пәндері: {st.session_state.answers['subjects']}. Хоббиі: {st.session_state.answers['hobby']}."
-    prompt = f"Сен кәсіптік бағдар бекерші ЖИ-сің. Мына оқушыға Қазақстан нарығына сай ТОП-3 мамандық ұсынып, себебін қысқаша ғылыми негездеп жаз: {user_profile}. Тек қазақ тілінде жауап бер."
+    prompt = f"Сен кәсіптік бағдар беруші ЖИ-сің. Мына оқушыға Қазақстан нарығына сай ТОП-3 мамандық ұсынып, себебін қысқаша ғылыми негіздеп жаз: {user_profile}. Тек қазақ тілінде жауап бер."
     
     with st.spinner("ЖИ мәліметтерді талдауда..."):
         try:
@@ -71,4 +70,3 @@ elif st.session_state.step == 4:
         st.session_state.step = 1
         st.session_state.answers = {}
         st.rerun()
-
