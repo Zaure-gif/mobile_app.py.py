@@ -3,7 +3,7 @@ import google.generativeai as genai
 
 # --- ЖИ КІЛТІН БАПТАУ ---
 # НАЗАР АУДАРЫҢЫЗ: ОСЫ_ЖЕРГЕ ai.google.dev сайтынан алған өз кілтіңізді қойыңыз
-GEMINI_API_KEY = "Google Gemini API" 
+GEMINI_API_KEY = "AQ.Ab8RN6JyxVeVWr2HBFY_Jh2T-h8CTmf4CNgdxvQHEZNQwLqj3w"
 genai.configure("AQ.Ab8RN6JyxVeVWr2HBFY_Jh2T-h8CTmf4CNgdxvQHEZNQwLqj3w")
 
 st.set_page_config(page_title="ЖИ Мамандық", page_icon="🎯", layout="centered")
