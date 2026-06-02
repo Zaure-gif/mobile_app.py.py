@@ -1,7 +1,12 @@
 import streamlit as st
 import google.generativeai as genai
-GEMINI_API_KEY = "AQAb8RN6L13dhx2_yuWIXakINif_FNwo_JZGy7GNSKqYgy-aF-lg"
-genai.configure(api_key=GEMINI_API_KEY)
+import streamlit as st
+import google.generativeai as genai
+
+# Кілтті Streamlit Secrets-тен автоматты түрде алу
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+# Кілтті Streamlit Secrets-тен автоматты түрде алу
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 st.set_page_config(page_title="ЖИ Мамандық", page_icon="🎯", layout="centered")
 if 'step' not in st.session_state:
     st.session_state.step = 1
