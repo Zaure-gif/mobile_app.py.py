@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 
-# --- ЖИ КІЛТІН БАПТАУ (НАҒЫЗ ТАЗА КІЛТ) ---
+# --- ЖИ КІЛТІН БАПТАУ (ТАЗА КІЛТ ЕНГІЗІЛДІ) ---
 GEMINI_API_KEY = "AQAb8RN63yxVwV2HDFY_Jh2T-hBcTmf4CNgdxvQHEZNQwLqj3w"
 genai.configure(api_key=GEMINI_API_KEY)
 
@@ -14,8 +14,8 @@ if 'answers' not in st.session_state:
 
 # --- 1-ЭКРАН: СӘЛЕМДЕСУ ---
 if st.session_state.step == 1:
-    st.markdown("<h2 style='text-align: center;'>🎯 ЖИ Негізінде Мамандық Тандау ЖҮЙЕСІ</h2>", unsafe_allow_html=True)
-    st.write("Болашақ maмандығыңызды жасанды интеллект көмегімен анықтаңыз. Сұрақтарға жауап беріңіз.")
+    st.markdown("<h2 style='text-align: center;'>🎯 ЖИ Негізінде Мамандық Таңдау ЖҮЙЕСІ</h2>", unsafe_allow_html=True)
+    st.write("Болашақ мамандығыңызды жасанды интеллект көмегімен анықтаңыз. Сұрақтарға жауап беріңіз.")
     st.markdown("---")
     if st.button("Бастау 🚀", use_container_width=True, type="primary"):
         st.session_state.step = 2
@@ -55,7 +55,7 @@ elif st.session_state.step == 4:
     st.subheader("🎯 ЖИ Сараптамасының Қорытындысы")
     
     user_profile = f"Пәндері: {st.session_state.answers['subjects']}. Хоббиі: {st.session_state.answers['hobby']}."
-    prompt = f"Сен кәсіптік бағдар берегуші ЖИ-сің. Мына оқушыға Қазақстан нарығына сай ТОП-3 мамандық ұсынып, себебін қысқаша негіздеп жаз: {user_profile}. Тек қазақ тілінде жауап бер."
+    prompt = f"Сен кәсіптік бағдар беруші ЖИ-сің. Мына оқушыға Қазақстан нарығына сай ТОП-3 мамандық ұсынып, себебін қысқаша ғылыми негіздеп жаз: {user_profile}. Тек қазақ тілінде жауап бер."
     
     with st.spinner("ЖИ мәліметтерді талдауда..."):
         try:
@@ -63,7 +63,7 @@ elif st.session_state.step == 4:
             response = model.generate_content(prompt)
             st.markdown(response.text)
         except Exception as e:
-            st.error("ЖИ-ге қосылу мүмкін болмады. Кілтті қайта тексеріңіз.")
+            st.error("ЖИ-ге қосылу мүмкін болмады. API кілтін тексеріңіз.")
             
     st.markdown("---")
     if st.button("Қайтадан бастау 🔄", use_container_width=True):
