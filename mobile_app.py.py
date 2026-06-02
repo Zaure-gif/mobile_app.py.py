@@ -1,8 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
 
-# --- ЖИ КІЛТІН БАПТАУ (ТАЗА КІЛТ ЕНГІЗІЛДІ) ---
-GEMINI_API_KEY = "AQ.Ab8RN6L13dhx2_yuWlXaklNif_FNwo_JZGy7GNSKqYgy-aF-Ig"
+# --- ЖИ КІЛТІН БАПТАУ ---
+GEMINI_API_KEY = "AQAb8RN6L13dhx2_yuWIXakINif_FNwo_JZGy7GNSKqYgy-aF-lg"
 genai.configure(api_key=GEMINI_API_KEY)
 
 st.set_page_config(page_title="ЖИ Мамандық", page_icon="🎯", layout="centered")
